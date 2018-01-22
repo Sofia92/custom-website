@@ -11,39 +11,46 @@
       }
     }
   }
-
-  aside {
-    display: inline-block;
-    width: 150px;
-    li {
-      padding: 10px 5px;
-      border-right: 2px solid #eee;
-      cursor: pointer;
-      &:hover, &.active {
-        color: #108ee9;
-        border-color: #108ee9;
-        background-color: #eeeeee;
-      }
-    }
-  }
-  content {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(100% - 155px);
-    label {
-      padding: 5px 10px;
-      cursor: pointer;
-      width: 150px;
+  .tag-detail {
+    padding: 20px 10px;
+    position: relative;
+    aside {
       display: inline-block;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      &:hover {
-        color: #108ee9;
+      width: 150px;
+      li {
+        padding: 10px 5px;
+        border-right: 2px solid #eee;
+        cursor: pointer;
+        &:hover, &.active {
+          color: #108ee9;
+          border-color: #108ee9;
+          background-color: #eeeeee;
+        }
       }
     }
-    &.center-content {
-      text-align: center;
+    content {
+      position: absolute;
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - 156px);
+      label {
+        padding: 5px 10px;
+        cursor: pointer;
+        width: 150px;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        &:hover {
+          color: #108ee9;
+        }
+      }
+      &.center-without-side {
+        left: calc(50% - (100% - 156px) / 2);
+      }
+      &.content-with-side {
+        left: calc((50% + 100px) - ((100% - 156px) / 2));
+      }
     }
   }
 }

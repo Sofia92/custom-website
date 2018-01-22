@@ -7,7 +7,7 @@
 </nav>
 
 <div class="tag-detail">
-  <aside *ngIf="subCategories.size>0">
+  <aside *ngIf="subCategories?.size>0">
     <ul>
       <ng-container *ngFor="let subCategory of subCategories">
         <li [class.active]="currentSubCategory === subCategory" (click)="setCurrentSubCategory(subCategory)">
@@ -16,7 +16,7 @@
       </ng-container>
     </ul>
   </aside>
-  <content [class.center-content]="subCategories.size===0">
+  <content [class.center-without-side]="subCategories?.size===0" [class.center-with-side]="subCategories?.size>0">
     <ng-container *ngFor="let tag of leafTags">
       <label (click)="routerToCurrentTag(tag)">{{tag.name}}</label>
     </ng-container>
