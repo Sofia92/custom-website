@@ -1,0 +1,16 @@
+<table>
+  <thead>
+  <tr>
+    <th>标题</th>
+    <th>域名</th>
+    <th>备注</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let site of sites">
+    <td>{{site.title}}</td>
+    <td (click)="goToSite(site)">{{site.hostName}}</td>
+    <td>{{site.description}}</td>
+  </tr>
+  </tbody>
+</table>

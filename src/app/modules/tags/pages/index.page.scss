@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  nav {
+    li {
+      padding: 8px 12px;
+      display: inline-block;
+      cursor: pointer;
+      &:hover, &.active {
+        border-bottom: 2px solid #108ee9;
+        color: #108ee9;
+      }
+    }
+  }
+
+  aside {
+    display: inline-block;
+    width: 150px;
+    li {
+      padding: 10px 5px;
+      border-right: 2px solid #eee;
+      cursor: pointer;
+      &:hover, &.active {
+        color: #108ee9;
+        border-color: #108ee9;
+        background-color: #eeeeee;
+      }
+    }
+  }
+  content {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 155px);
+    label {
+      padding: 5px 10px;
+      cursor: pointer;
+      width: 150px;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      &:hover {
+        color: #108ee9;
+      }
+    }
+    &.center-content {
+      text-align: center;
+    }
+  }
+}

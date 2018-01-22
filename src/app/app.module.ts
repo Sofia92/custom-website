@@ -1,16 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule, Routes} from '@angular/router';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {TagsModule} from './modules/tags/tags.module';
+import {AppComponent} from './app.component';
 
+const appRoutes: Routes = [
+  {path: '', redirectTo: 'tags', pathMatch: 'full'},
+  {path: 'tags', loadChildren: 'modules/tags/tags.module#TagsModule'},
+];
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TagsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
